@@ -33,6 +33,7 @@
  */
 
 #include <stdio.h>
+#include <target.h>
 
 #define UNDEF 0x100
 
@@ -43,6 +44,10 @@ int main(int argc, char *argv[])
     int c;
     int pc = UNDEF;
     unsigned char n = 0;
+
+    SET_BINARY_MODE(stdin);
+    SET_BINARY_MODE(stdout);
+
     for (;;) {
         c = getchar();
         if (c == pc && n < 0xFF)

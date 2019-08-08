@@ -34,6 +34,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <target.h>
 
 #define UNDEF 0x100
 
@@ -44,6 +45,10 @@ int main(int argc, char *argv[])
     int c;
     int rc = UNDEF;
     bool repeating = false;
+
+    SET_BINARY_MODE(stdin);
+    SET_BINARY_MODE(stdout);
+ 
     while ((c = getchar()) != EOF) {
         if (repeating) {
             if (rc == UNDEF) {
