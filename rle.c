@@ -33,7 +33,7 @@
  */
 
 #include <stdio.h>
-#include <target.h>
+#include "target.h"
 
 #define UNDEF 0x100
 
