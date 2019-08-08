@@ -3,6 +3,7 @@
  */
 
 #ifndef _TARGET_H
+#define _TARGET_H
 
 #ifdef _WIN32
 #  include <io.h>
