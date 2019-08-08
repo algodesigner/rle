@@ -34,7 +34,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include <target.h>
+#include "target.h'
 
 #define UNDEF 0x100
 
