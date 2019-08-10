@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
     int pc = UNDEF;
     unsigned char n = 0;
 
-    SET_BINARY_MODE(stdin);
-    SET_BINARY_MODE(stdout);
+    SET_BINARY_MODE(STDIN_FILENO);
+    SET_BINARY_MODE(STDOUT_FILENO);
 
     for (;;) {
         c = getchar();

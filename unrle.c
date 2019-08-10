@@ -46,8 +46,8 @@ int main(int argc, char *argv[])
     int rc = UNDEF;
     bool repeating = false;
 
-    SET_BINARY_MODE(stdin);
-    SET_BINARY_MODE(stdout);
+    SET_BINARY_MODE(STDIN_FILENO);
+    SET_BINARY_MODE(STDOUT_FILENO);
  
     while ((c = getchar()) != EOF) {
         if (repeating) {

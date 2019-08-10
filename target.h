@@ -3,14 +3,20 @@
  */
 
 #ifndef _TARGET_H
-#define _TARGET_H
 
-#ifdef _WIN32
+#if defined WIN32 || defined _WIN32 || defined __CYGWIN__
+#  define STDIN_FILENO 0
+#  define STDOUT_FILENO 1
+#  define STDERR_FILENO 2
 #  include <io.h>
 #  include <fcntl.h>
-#  define SET_BINARY_MODE(handle) _setmode(_fileno(handle), _O_BINARY)
+#  ifdef __MINGW32__
+#    define SET_BINARY_MODE(fd) _setmode(fd, _O_BINARY)
+#  else
+#    define SET_BINARY_MODE(fd) setmode(fd, O_BINARY)
+#  endif
 #else
-#  define SET_BINARY_MODE(handle) ((void)0)
+#  define SET_BINARY_MODE(fd) ((void)0)
 #endif
 
 #endif
